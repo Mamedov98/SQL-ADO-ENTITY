@@ -126,10 +126,11 @@ namespace FluentApiStudent
                 student.DateOfBirth = textBox3.Text;
                 student.Group = textBox4.Text;
 
-                LoadData();
+               // LoadData();
                 _context.SaveChanges();
-                
 
+                _context = new StudentContext();
+                LoadData();
                 MessageBox.Show("Студент успешно отредактирован!");
                 
             }
@@ -145,5 +146,11 @@ namespace FluentApiStudent
         {
             _context.Dispose();
         }
+
+        //private void button4_Click(object sender, EventArgs e)  Для обновления
+        //{
+        //    _context = new StudentContext();
+        //    LoadData();
+        //}
     }
 }
